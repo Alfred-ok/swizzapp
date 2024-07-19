@@ -1,0 +1,67 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.formSigninContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    flex-flow: column;
+}
+
+.form{
+    display: flex;
+    flex-flow: column;
+    padding: 30px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 6px 3px rgb(230, 228, 228);
+}
+.form h1{
+    margin: 10px auto;
+}
+.inputform{
+    padding: 15px 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    border: 1px solid gray;
+
+}
+
+.formButton{
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 21px;
+    background-color: rgb(85, 212, 85);
+    
+}
+.formButton:hover{
+    background-color: green;
+    color: #fff;
+}
+
+.optioninput{
+    padding: 15px 10px;
+}
+.swizz{
+    margin: 50px auto;
+    text-align: center;
+}
+.swizz h3{
+    color: rgb(78, 78, 78);
+}
+.swizz p{
+    color: rgb(121, 120, 120);
+}
