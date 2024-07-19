@@ -6,12 +6,18 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
-    const[role, setRole] = useState("");
+    const[role, setRole] = useState("Admin");
     
 
     const handleOnSubmit =(e) =>{
         e.PreventDefault();
-        const details = {email, password}
+        const details = {firstname,lastname,email, password,role}
+
+        fetch("http://localhost:5050/crackit/v1/auth/register",
+        {method:"POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(details)
+    })
     }
   return (
     <div className='formSigninContainer'>
@@ -30,8 +36,8 @@ function SignUp() {
           type="text"
           placeholder="Last name"
           name="last name"
-          value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          value={lastname}
+          onChange={(e)=>setLastname(e.target.value)}
         />
         <input
           className='inputform'
@@ -50,9 +56,9 @@ function SignUp() {
           onChange={(e)=>setPassword(e.target.value)}
         />
 
-        <select className='inputform'>
+        <select className='inputform' value={role} onChange={(e)=>setRole(e.target.value)}>
             <option className='optioninput' value="Admin">Admin</option>
-            <option className='optioninput' value="Member">Member</option>
+            <option className='optioninput'  value="Member">Member</option>
         </select>
 
 
@@ -60,6 +66,7 @@ function SignUp() {
       </form>
       <div>{email}</div>
       <div>{password}</div>
+      <div>{role}</div>
 
         <div className='swizz'>
             <h3>SwizzSoft</h3>

@@ -11,6 +11,14 @@ function Signin() {
     const handleOnSubmit =(e) =>{
         e.PreventDefault();
         const details = {email, password}
+
+        fetch("http://localhost:5050/crackit/v1/auth/authenticate",
+        {
+          method:"POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(details)
+        }
+    )
     }
   return (
      <div className='formSigninContainer'>
